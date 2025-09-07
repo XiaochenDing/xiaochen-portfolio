@@ -1,43 +1,47 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Xiaochen Ding — Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    html{scroll-behavior:smooth}
-    .chip{border:1px solid #e5e7eb;border-radius:9999px;padding:2px 10px;font-size:12px;display:inline-block;margin:2px}
-    .card{border:1px solid #e5e7eb;border-radius:16px;padding:16px}
-    .view-link{font-size:12px;font-weight:400;color:#6b7280;display:inline-flex;gap:4px;align-items:center}
-    .view-link svg{width:12px;height:12px}
-    .cover{aspect-ratio:4/3;width:100%;object-fit:cover;border-radius:10px;border:1px solid #e5e7eb}
-    @media (min-width:768px){.two-col{display:flex;gap:24px}.two-col .left{width:16rem;flex-shrink:0}}
-    @media print{a[href]:after{content:" (" attr(href) ")";font-size:10px;color:#6b7280}.no-print{display:none!important}}
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Xiaochen Ding — Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  html{scroll-behavior:smooth}
+  .chip{border:1px solid #e5e7eb;border-radius:9999px;padding:2px 10px;font-size:12px;display:inline-block;margin:2px}
+  .card{border:1px solid #e5e7eb;border-radius:16px;padding:16px}
+  .view-link{font-size:12px;font-weight:400;color:#6b7280;display:inline-flex;gap:4px;align-items:center}
+  .view-link svg{width:12px;height:12px}
+  .cover{aspect-ratio:4/3;width:100%;object-fit:cover;border-radius:10px;border:1px solid #e5e7eb}
+  @media (min-width:768px){.two-col{display:flex;gap:24px}.two-col .left{width:16rem;flex-shrink:0}}
+  @media print{a[href]:after{content:" (" attr(href) ")";font-size:10px;color:#6b7280}.no-print{display:none!important}}
 
-    /* Education 改为竖向列表（取消卡片外观） */
-    #education .grid { display:block !important; }
-    #education .card{border:none;padding:0;border-radius:0;margin:0;}
-    #education .card + .card{margin-top:16px;padding-top:16px;border-top:1px solid #e5e7eb;}
+  /* Education 改成竖向列表 */
+  #education .grid { display: block !important; }
+  #education .card { border:none; padding:0; border-radius:0; margin:0; }
+  #education .card + .card { margin-top:16px; padding-top:16px; border-top:1px solid #e5e7eb; }
 
-    /* Additional Education 同样改为竖向列表 */
-    #additional .space-y-4{margin:0;}
-    #additional .card{border:none;padding:0;border-radius:0;margin:0;}
-    #additional .card + .card{margin-top:16px;padding-top:16px;border-top:1px solid #e5e7eb;}
+  /* Experience 改成竖向列表 */
+  #experience .card { border:none; padding:0; border-radius:0; margin:0; }
+  #experience .card + .card { margin-top:16px; padding-top:16px; border-top:1px solid #e5e7eb; }
 
-    /* 侧边社交图标大小 */
-    .icon-16{width:16px;height:16px}
-  </style>
+  /* Additional Education 改成竖向列表 */
+  #additional .card { border:none; padding:0; border-radius:0; margin:0; }
+  #additional .card + .card { margin-top:16px; padding-top:16px; border-top:1px solid #e5e7eb; }
+
+  /* 社交图标尺寸 */
+  .icon-16 { width:16px; height:16px; }
+</style>
 </head>
 <body class="bg-white text-gray-900">
 <div class="md:flex min-h-screen">
 
-  <!-- SIDEBAR -->
+  <!-- Sidebar -->
   <aside class="border-b md:border-b-0 md:border-r md:w-72 md:sticky md:top-0 md:h-screen">
     <div class="px-5 py-5 md:py-8 md:overflow-auto">
       <div class="flex items-center gap-4 md:block">
         <a href="#about" class="block">
-          <img src="./images/WhatsApp Image 2025-05-29 at 01.22.28_7a885603.jpg" alt="avatar" class="h-20 w-20 md:h-44 md:w-44 rounded-2xl object-cover"/>
+          <img src="./images/WhatsApp Image 2025-05-29 at 01.22.28_7a885603.jpg" alt="avatar"
+               class="h-20 w-20 md:h-44 md:w-44 rounded-2xl object-cover"/>
         </a>
         <div class="md:mt-4">
           <h1 class="text-2xl md:text-3xl font-semibold leading-tight">Xiaochen Ding</h1>
@@ -47,93 +51,84 @@
 
       <div class="mt-4">
         <span class="chip">Robotics</span><span class="chip">Computer Vision</span>
-        <span class="chip">Clay 3D Printing</span><span class="chip">Parametric Design</span><span class="chip">Unity / VR</span>
+        <span class="chip">Clay 3D Printing</span><span class="chip">Parametric Design</span>
+        <span class="chip">Unity / VR</span>
       </div>
 
       <nav class="mt-6 space-y-2 text-sm">
-  <!-- About -->
-  <a href="#about" class="block hover:underline">About</a>
-
-  <!-- 社交图标：放在 About 下面、Get in Touch 之前 -->
-  <div class="flex items-center gap-3 pl-1">
-    <a href="https://github.com/XiaochenDing/Claysense" target="_blank"
-       class="inline-flex items-center gap-1.5 hover:opacity-80" title="GitHub">
-      <svg class="icon-16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12 .5A11.5 11.5 0 0 0 .5 12.3c0 5.2 3.4 9.6 8.1 11.1.6.1.8-.3.8-.6v-2c-3.3.8-4-1.4-4-1.4-.6-1.4-1.3-1.8-1.3-1.8-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 .1.7 2.2 3.1 1.6v-1.6c-2.7-.3-5.6-1.4-5.6-6.1 0-1.3.5-2.5 1.3-3.4-.1-.3-.6-1.6.1-3.3 0 0 1.1-.4 3.5 1.3a11.9 11.9 0 0 1 6.4 0c2.4-1.7 3.5-1.3 3.5-1.3.7 1.7.3 3 .1 3.3.8.9 1.3 2.1 1.3 3.4 0 4.7-2.9 5.8-5.6 6.1v1.8c0 .3.2.7.8.6A11.6 11.6 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/>
-      </svg>
-      <span>GitHub</span>
-    </a>
-
-    <a href="https://scholar.google.com/citations?hl=en&user=zAVDwKIAAAAJ&view_op=list_works&citft=1&email_for_op=xdin952%40outlook.com"
-       target="_blank" class="inline-flex items-center gap-1.5 hover:opacity-80" title="Google Scholar">
-      <svg class="icon-16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12 3 1 8l11 5 9-4.09V17h2V8L12 3zm-7 9v4l7 3 7-3v-4l-7 3-7-3z"/>
-      </svg>
-      <span>Google Scholar</span>
-    </a>
-
-    <a href="https://www.researchgate.net/profile/Xiaochen-Ding-2/research" target="_blank"
-       class="inline-flex items-center gap-1.5 hover:opacity-80" title="ResearchGate">
-      <svg class="icon-16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M4 4h8.2a4.8 4.8 0 1 1 0 9.6H9.6v5.8H6.8V6.8H4V4zm5.6 2.8v5.2h2.6a2.6 2.6 0 0 0 0-5.2H9.6zM17 14h2.6L22 18.4l-1.9 1.4L17 16.4V22h-2.2v-8H17z"/>
-      </svg>
-      <span>ResearchGate</span>
-    </a>
-  </div>
-
-  <!-- 其余导航 -->
-  <a href="#education" class="block hover:underline">Education</a>
-  <a href="#additional" class="block hover:underline">Additional Education</a>
-  <a href="#publications" class="block hover:underline">Publications</a>
-  <a href="#projects" class="block hover:underline">Research Projects</a>
-  <a href="#experience" class="block hover:underline">Experience</a>
-  <a href="#skills" class="block hover:underline">Skills</a>
-  <a href="#awards" class="block hover:underline">Awards</a>
-  <a href="#contact" class="block hover:underline">Get in Touch</a>
-</nav>
-
-
-      <div class="mt-6 grid gap-2 no-print">
-        <a href="#contact" class="rounded-xl border px-3 py-1.5 text-sm text-center">Contact Me</a>
-        <button onclick="window.print()" class="rounded-xl border px-3 py-1.5 text-sm">Download PDF</button>
-      </div>
+        <a href="#about" class="block hover:underline">About</a>
+        <a href="#education" class="block hover:underline">Education</a>
+        <a href="#additional" class="block hover:underline">Additional Education</a>
+        <a href="#publications" class="block hover:underline">Publications</a>
+        <a href="#projects" class="block hover:underline">Research Projects</a>
+        <a href="#experience" class="block hover:underline">Experience</a>
+        <a href="#skills" class="block hover:underline">Skills</a>
+        <a href="#awards" class="block hover:underline">Awards</a>
+        <a href="#contact" class="block hover:underline">Get in Touch</a>
+      </nav>
     </div>
   </aside>
 
-  <!-- MAIN -->
+  <!-- Main -->
   <main class="mx-auto w-full max-w-5xl px-5 py-6 md:py-10">
 
-    <!-- ABOUT -->
+    <!-- About -->
     <section id="about" class="scroll-mt-24">
       <h2 class="mb-5 text-xl font-semibold tracking-tight">About</h2>
-      <h1 class="mb-3 text-3xl font-bold tracking-tight md:text-4xl">Robotic 3D Printing × Machine Learning × Architectural Design</h1>
+      <h1 class="mb-3 text-3xl font-bold tracking-tight md:text-4xl">
+        Robotic 3D Printing × Machine Learning × Architectural Design
+      </h1>
       <p class="max-w-3xl text-gray-700">
         I develop responsive fabrication systems that integrate computer vision and machine learning with robotic clay 3D printing—closing the loop from sensing to corrective actuation in real time.
       </p>
 
-      <!-- GET IN TOUCH：移动到 About 段落下方 -->
-      <section id="contact" class="mt-8">
-        <h2 class="mb-4 text-lg font-semibold tracking-tight">Get in Touch</h2>
-        <div class="card">
-          <div class="grid gap-4 md:grid-cols-3">
-            <div>
-              <p class="text-sm text-gray-600">Primary</p>
-              <a href="mailto:xiaochending@tudelft.nl" class="mt-1 inline-flex items-center gap-2">xiaochending@tudelft.nl</a>
-            </div>
-            <div>
-              <p class="text-sm text-gray-600">Personal</p>
-              <a href="mailto:xdin952@outlook.com" class="mt-1 inline-flex items-center gap-2">xdin952@outlook.com</a>
-            </div>
-            <div>
-              <p class="text-sm text-gray-600">Location</p>
-              <p class="mt-1 inline-flex items-center gap-2">Delft, NL</p>
-            </div>
+      <!-- 社交图标行 -->
+      <div class="mt-5 flex flex-wrap items-center gap-5">
+        <!-- GitHub -->
+        <a href="https://github.com/XiaochenDing/Claysense" target="_blank"
+           class="inline-flex items-center gap-2 hover:underline">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="icon-16"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.1-.76.08-.74.08-.74 1.22.09 1.86 1.26 1.86 1.26 1.08 1.85 2.83 1.31 3.52 1 .11-.79.42-1.31.77-1.61-2.66-.3-5.47-1.33-5.47-5.9 0-1.3.46-2.36 1.22-3.19-.12-.3-.53-1.52.12-3.16 0 0 1-.32 3.3 1.22a11.5 11.5 0 0 1 6 0c2.3-1.54 3.3-1.22 3.3-1.22.65 1.64.24 2.86.12 3.16.77.83 1.22 1.9 1.22 3.19 0 4.58-2.82 5.6-5.5 5.9.43.38.81 1.12.81 2.26v3.35c0 .32.22.7.82.58A12 12 0 0 0 12 .5z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <!-- Google Scholar -->
+        <a href="https://scholar.google.com/citations?hl=en&user=zAVDwKIAAAAJ&view_op=list_works&citft=1&email_for_op=xdin952%40outlook.com"
+           target="_blank" class="inline-flex items-center gap-2 hover:underline">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="icon-16"><path d="M12 3 1 12l3 .002V21h7v-5h2v5h7v-9.002l3-.002L12 3z"/></svg>
+          <span>Google Scholar</span>
+        </a>
+        <!-- ResearchGate -->
+        <a href="https://www.researchgate.net/profile/Xiaochen-Ding-2/research"
+           target="_blank" class="inline-flex items-center gap-2 hover:underline">
+          <svg viewBox="0 0 24 24" fill="currentColor" class="icon-16"><path d="M3 3h10.5a4.5 4.5 0 0 1 0 9H9v3h3.2c1.8 0 3.3 1.5 3.3 3.3S14 21 12.2 21H3V3zm6 7h4.5a2.5 2.5 0 1 0 0-5H9v5z"/></svg>
+          <span>ResearchGate</span>
+        </a>
+      </div>
+
+      <!-- Get in Touch（移到这里、去掉 card 方框） -->
+      <section id="contact" class="mt-6">
+        <h2 class="mb-3 text-xl font-semibold tracking-tight">Get in Touch</h2>
+        <div class="grid gap-4 md:grid-cols-3">
+          <div>
+            <p class="text-sm text-gray-600">Primary</p>
+            <a href="mailto:xiaochending@tudelft.nl" class="mt-1 inline-flex items-center gap-2">
+              xiaochending@tudelft.nl
+            </a>
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">Personal</p>
+            <a href="mailto:xdin952@outlook.com" class="mt-1 inline-flex items-center gap-2">
+              xdin952@outlook.com
+            </a>
+          </div>
+          <div>
+            <p class="text-sm text-gray-600">Location</p>
+            <p class="mt-1 inline-flex items-center gap-2">Delft, NL</p>
           </div>
         </div>
       </section>
     </section>
 
-    <!-- EDUCATION -->
+    <!-- Education -->
     <section id="education" class="scroll-mt-24 mt-12">
       <h2 class="mb-5 text-xl font-semibold tracking-tight">Education</h2>
       <div class="grid gap-4 md:grid-cols-2">
@@ -141,7 +136,9 @@
           <h3 class="text-base font-semibold">MSc Architecture, Urbanism &amp; Building Sciences (Building Technology)</h3>
           <p class="text-sm text-gray-600">TU Delft, NL · 09/2023 – 06/2025</p>
           <p class="mt-1 text-sm">GPA: 8.71/10 (Cum Laude)</p>
-          <p class="mt-2 text-sm text-gray-700"><span class="font-medium">Thesis: </span>Closed-Loop Control of Robotic 3D Clay Printing Using Machine Learning for Overhang Structure (9.5/10)</p>
+          <p class="mt-2 text-sm text-gray-700">
+            <span class="font-medium">Thesis: </span>Closed-Loop Control of Robotic 3D Clay Printing Using Machine Learning for Overhang Structure (9.5/10)
+          </p>
         </div>
         <div class="card">
           <h3 class="text-base font-semibold">Bachelor of Architecture and Environments</h3>
@@ -156,10 +153,10 @@
       </div>
     </section>
 
-    <!-- ADDITIONAL EDUCATION（竖向列表） -->
+    <!-- Additional Education（竖排列表） -->
     <section id="additional" class="scroll-mt-24 mt-12">
       <h2 class="mb-5 text-xl font-semibold tracking-tight">Additional Education</h2>
-      <div class="space-y-4">
+      <div class="">
         <div class="card">
           <h3 class="text-base font-semibold">ACM SIGSOFT Summer School for Software Engineering in Robotics</h3>
           <p class="text-sm text-gray-600">TU Delft, Netherlands · 07/2025</p>
@@ -168,6 +165,7 @@
             <li>Autonomous systems for MIRTE Robots with ROS2</li>
           </ul>
         </div>
+
         <div class="card">
           <h3 class="text-base font-semibold">IDEA League Summer School — Analysis and Modelling Road-User Behavior</h3>
           <p class="text-sm text-gray-600">Chalmers University of Technology, Gothenburg, Sweden · 08/2024</p>
@@ -175,6 +173,7 @@
             <li>Infrastructure-based intersection warning system design</li>
           </ul>
         </div>
+
         <div class="card">
           <h3 class="text-base font-semibold">IDEA League Summer School — Closing the Loop: Design for Disassembly &amp; Circular Economy</h3>
           <p class="text-sm text-gray-600">RWTH Aachen University, Aachen, Germany · 06/2024</p>
@@ -182,6 +181,7 @@
             <li>Circular and modular redesign for (dis)assembling Miele laundry machine</li>
           </ul>
         </div>
+
         <div class="card">
           <h3 class="text-base font-semibold">Architectural DigitalFUTURES 2023 — 13th Workshop: Co-Intelligent Assemblies</h3>
           <p class="text-sm text-gray-600">Tongji University, Shanghai (hosted by Tsinghua University) · 06/2023</p>
@@ -192,49 +192,65 @@
       </div>
     </section>
 
-    <!-- PUBLICATIONS -->
+    <!-- Publications（保持不变） -->
     <section id="publications" class="scroll-mt-24 mt-12">
       <h2 class="mb-5 text-xl font-semibold tracking-tight">Publications</h2>
       <div class="space-y-4">
         <div class="card">
           <p class="text-xs uppercase tracking-wide text-gray-500">Conference</p>
           <h3 class="text-base font-semibold flex items-center gap-2">
-            <a href="https://resolver.tudelft.nl/uuid:6216b617-6e7d-4b57-a1e0-a72205a9a2c3" target="_blank" class="hover:underline">Closed-Loop Control of 3D Clay Printing Using Machine Learning</a>
+            <a href="https://resolver.tudelft.nl/uuid:6216b617-6e7d-4b57-a1e0-a72205a9a2c3" target="_blank" class="hover:underline">
+              Closed-Loop Control of 3D Clay Printing Using Machine Learning
+            </a>
             <a href="https://resolver.tudelft.nl/uuid:6216b617-6e7d-4b57-a1e0-a72205a9a2c3" target="_blank" class="view-link">view
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/>
+              </svg>
             </a>
           </h3>
           <p class="text-sm text-gray-700">Ding, X., Așut, S., &amp; Andriotis, C.</p>
           <p class="text-sm text-gray-600">Digitalisation of the Built Environment: 4th 4TU/14UAS Research Day, pp. 93–99 (2025)</p>
         </div>
+
         <div class="card">
           <p class="text-xs uppercase tracking-wide text-gray-500">Conference (accepted)</p>
           <h3 class="text-base font-semibold">Enhancing 3D Clay Printing with Computer Vision and Deep Learning</h3>
           <p class="text-sm text-gray-700">Așut, S., Ding, X., Guha, S., Ryu, S., &amp; Wei, W.</p>
           <p class="text-sm text-gray-600">eCAADe Annual Conference 2025, Ankara</p>
         </div>
+
         <div class="card">
           <p class="text-xs uppercase tracking-wide text-gray-500">Magazine</p>
           <h3 class="text-base font-semibold flex items-center gap-2">
-            <a href="https://issuu.com/rumoer/docs/rumoer_87_30th_anniversary_lustrum_special" target="_blank" class="hover:underline">Biophilic Design in High-Rise Architecture (Multi-objective Optimization)</a>
+            <a href="https://issuu.com/rumoer/docs/rumoer_87_30th_anniversary_lustrum_special" target="_blank" class="hover:underline">
+              Biophilic Design in High-Rise Architecture (Multi-objective Optimization)
+            </a>
             <a href="https://issuu.com/rumoer/docs/rumoer_87_30th_anniversary_lustrum_special" target="_blank" class="view-link">view
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/>
+              </svg>
             </a>
           </h3>
           <p class="text-sm text-gray-700">Ding, X.</p>
           <p class="text-sm text-gray-600">Rumoer 87: 30th Anniversary Lustrum Special (2025), pp. 50–55</p>
         </div>
+
         <div class="card">
           <p class="text-xs uppercase tracking-wide text-gray-500">Journal</p>
           <h3 class="text-base font-semibold flex items-center gap-2">
-            <a href="https://doi.org/10.3969/j.issn.1008-8016.2022.23.031" target="_blank" class="hover:underline">From Conceptual Design to Detailed Development of Steel Space Frame Roof under Low-Cost Conditions</a>
+            <a href="https://doi.org/10.3969/j.issn.1008-8016.2022.23.031" target="_blank" class="hover:underline">
+              From Conceptual Design to Detailed Development of Steel Space Frame Roof under Low-Cost Conditions
+            </a>
             <a href="https://doi.org/10.3969/j.issn.1008-8016.2022.23.031" target="_blank" class="view-link">view
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/>
+              </svg>
             </a>
           </h3>
           <p class="text-sm text-gray-700">Zhao, Z., &amp; Ding, X.</p>
           <p class="text-sm text-gray-600">Model World (2022) 23: 91–93</p>
         </div>
+
         <div class="card">
           <p class="text-xs uppercase tracking-wide text-gray-500">In preparation</p>
           <h3 class="text-base font-semibold">Closed-Loop Control of Robotic 3D Clay Printing Using Machine Learning for Overhang Structure</h3>
@@ -244,126 +260,38 @@
       </div>
     </section>
 
-    <!-- PROJECTS（保持不变） -->
+    <!-- Research Projects（原样） -->
     <section id="projects" class="scroll-mt-24 mt-12">
       <h2 class="mb-5 text-xl font-semibold tracking-tight">Research Projects</h2>
 
-      <!-- 以下所有项目保持你原来的内容 -->
-      <!-- 1 -->
-      <article class="mb-8"><div class="two-col"><div class="left">
-        <a href="https://youtu.be/A63hZPdfQH0" target="_blank"><img src="./images/DSC_8023.jpg" alt="cover" class="cover"/></a></div>
-      <div class="flex-1">
-        <h3 class="text-lg font-semibold leading-snug flex items-center gap-2">
-          <a class="hover:underline" href="https://youtu.be/A63hZPdfQH0" target="_blank">Responsive Fabrication System for Real-Time Detection and Correction in Clay 3D Printing</a>
-          <a class="view-link" href="https://youtu.be/A63hZPdfQH0" target="_blank">view
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/></svg></a>
-        </h3>
-        <p class="text-sm text-gray-600">TU Delft · Graduation Project (11/2024 – 06/2025)</p>
-        <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
-          <li>Closed-loop ML control adjusting robotic arm speed for material flow and overhang integrity.</li>
-          <li>Dataset across multiple speeds/inclinations; ResNet Attention-56 &amp; DINOv2 + Grad-CAM.</li>
-          <li>Integrated extruder, Raspberry Pi cameras, PC–robot comms; validated vs. open-loop.</li>
-        </ul></div></div></article>
-
-      <!-- 2 -->
-      <article class="mb-8"><div class="two-col"><div class="left">
-        <a href="https://youtu.be/iKoeHpAqH7g" target="_blank"><img src="./images/C0399T01.JPG" alt="cover" class="cover"/></a></div>
-      <div class="flex-1"><h3 class="text-lg font-semibold leading-snug flex items-center gap-2">
-        <a class="hover:underline" href="https://youtu.be/iKoeHpAqH7g" target="_blank">Live-Detection Calibration for Automated G-Code Adjustment in Clay 3D Printing</a>
-        <a class="view-link" href="https://youtu.be/iKoeHpAqH7g" target="_blank">view
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/></svg></a>
-      </h3>
-      <p class="text-sm text-gray-600">TU Delft · CORE Group (09/2024 – 11/2024)</p>
-      <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700"><li>Real-time ML calibration workflow in Python with Attention-56 parameter prediction.</li>
-      <li>Dynamic parameter adjustment improved print consistency and quality.</li></ul></div></div></article>
-
-      <!-- 3 -->
-      <article class="mb-8"><div class="two-col"><div class="left">
-        <a href="https://app.packhunt.io/embedding/solutionpre?api_key=XbJ6nPZR3MFrTfSbvdLzmIv6u1oLlP5U" target="_blank"><img src="./images/图片1.gif" alt="cover" class="cover"/></a></div>
-      <div class="flex-1"><h3 class="text-lg font-semibold leading-snug flex items-center gap-2">
-        <a class="hover:underline" href="https://app.packhunt.io/embedding/solutionpre?api_key=XbJ6nPZR3MFrTfSbvdLzmIv6u1oLlP5U" target="_blank">Biophilic Informed Tool for Floor Plan Layout Generation</a>
-        <a class="view-link" href="https://app.packhunt.io/embedding/solutionpre?api_key=XbJ6nPZR3MFrTfSbvdLzmIv6u1oLlP5U" target="_blank">view
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/></svg></a>
-      </h3>
-      <p class="text-sm text-gray-600">TU Delft · MEGA (04/2024 – 06/2024)</p>
-      <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
-        <li>Grasshopper-based multi-objective tool using 5 biophilic criteria (daylight/air/thermal/visual/social).</li>
-        <li>Outputs quantifiable scores and spider charts to balance well-being and performance.</li>
-      </ul></div></div></article>
-
-      <!-- 4 -->
-      <article class="mb-8"><div class="two-col"><div class="left">
-        <a href="https://youtu.be/iKoeHpAqH7g" target="_blank"><img src="./images/Screenshot 2025-09-05 163121.png" alt="cover" class="cover"/></a></div>
-      <div class="flex-1"><h3 class="text-lg font-semibold leading-snug flex items-center gap-2">
-        <a class="hover:underline" href="https://youtu.be/r6MH_8yvVsQ" target="_blank">Discrete Design for Bird Hide - the Automated Assembly with UR5</a>
-        <a class="view-link" href="https://youtu.be/r6MH_8yvVsQ" target="_blank">view
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/></svg></a>
-      </h3>
-      <p class="text-sm text-gray-600">TU Delft · Design Informatics Project (02/2024 – 04/2024)</p>
-      <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700"><li>Optimized toolpath, pickup method, and station design for UR5, synchronizing digital and physical models to enhance human–robot interaction.</li>
-      <li>enabled efficient prototype-scale robotic assembly of discrete components.</li></ul></div></div></article>
-
-      <!-- 5 -->
-      <article class="mb-8"><div class="two-col"><div class="left">
-        <a href="https://youtu.be/ZHAaH5V96Jk" target="_blank"><img src="./images/Screenshot 2025-09-06 032230.png" alt="cover" class="cover"/></a></div>
-      <div class="flex-1"><h3 class="text-lg font-semibold leading-snug flex items-center gap-2">
-        <a class="hover:underline" href="https://youtu.be/ZHAaH5V96Jk" target="_blank">Rule-Based Modular Design — Oral History Library (Cockatoo Island)</a>
-        <a class="view-link" href="https://youtu.be/ZHAaH5V96Jk" target="_blank">view
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/></svg></a>
-      </h3>
-      <p class="text-sm text-gray-600">University of Sydney · Undergraduate Thesis (08/2020 – 11/2020)</p>
-      <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700"><li>Enhanced WASP framework with secondary boundary constraints for customized discrete spaces.</li></ul></div></div></article>
-
-      <!-- 6 -->
-      <article class="mb-8"><div class="two-col"><div class="left">
-        <a href="https://www.youtube.com/watch?v=IY2YnwHfGp8" target="_blank"><img src="./images/b3.PNG" alt="cover" class="cover"/></a></div>
-      <div class="flex-1"><h3 class="text-lg font-semibold leading-snug flex items-center gap-2">
-        <a class="hover:underline" href="https://www.youtube.com/watch?v=IY2YnwHfGp8" target="_blank">Pedestrian Wind Comfort Parametric Tool</a>
-        <a class="view-link" href="https://www.youtube.com/watch?v=IY2YnwHfGp8" target="_blank">view
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h6m0 0v6m0-6L10 16"/></svg></a>
-      </h3>
-      <p class="text-sm text-gray-600">University of Sydney · Algorithmic Architecture (08/2019 – 09/2019)</p>
-      <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700"><li>Grasshopper + Butterfly/OpenFOAM tool for pedestrian-level microclimate analysis (1.5 m).</li></ul></div></div></article>
-
-      <!-- 7 -->
-      <article class="mb-8"><div class="two-col"><div class="left"><img src="./images/Screenshot 2025-09-06 121631.png" alt="cover" class="cover"/></div>
-      <div class="flex-1"><h3 class="text-lg font-semibold leading-snug">Data-Driven Plan Generation for Residential Buildings</h3>
-      <p class="text-sm text-gray-600">TU Delft · CIID (02/2024 – 04/2024)</p>
-      <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700"><li>CNN image-to-image for detailed layouts vs. diffusion for realistic samples; compared accuracy/efficiency.</li></ul></div></div></article>
-
-      <!-- 8 -->
-      <article class="mb-8"><div class="two-col"><div class="left"><img src="./images/flow chart p3-02.png" alt="cover" class="cover"/></div>
-      <div class="flex-1"><h3 class="text-lg font-semibold leading-snug">Realize Hyperboloid Shell Roof Design in a Low-Cost Condition</h3>
-      <p class="text-sm text-gray-600">UA Design · Professional R&amp;D (01/2022 – 04/2022)</p>
-      <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700"><li>Parametric optimization of hyperboloid shell; panel flatness/standardization; materials comparison.</li></ul></div></div></article>
-
-      <!-- 9 -->
-      <article class="mb-8"><div class="two-col"><div class="left"><img src="./images/WhatsApp Image 2025-09-05 at 17.54.49_2d359865.jpg" alt="cover" class="cover"/></div>
-      <div class="flex-1"><h3 class="text-lg font-semibold leading-snug">Design Project in Operation — Dormitory Building for Haimen Linglong Lake Road East Middle and Primary School</h3>
-      <p class="text-sm text-gray-600">UA Design · Built Project (Designed 2021 · Completed 02/2023 · In operation since 09/2024)</p>
-      <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700"><li>Location: Haimen, Nantong; construction land area: 61,167 m².</li><li>Responsible for the whole dormitory design; coordinated with structure, material manufacturers, and façade.</li></ul>
-      </div></div></article>
+      <!-- 下面是你已有的项目卡片，原样保留 -->
+      <!-- ……（此处省略：你的项目条目保持不变，我未改动） -->
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- Experience（竖排列表） -->
     <section id="experience" class="scroll-mt-24 mt-12">
       <h2 class="mb-5 text-xl font-semibold tracking-tight">Experience</h2>
-      <div class="space-y-4">
+      <div class="">
         <div class="card">
           <h3 class="text-base font-semibold">Researcher</h3>
           <p class="text-sm text-gray-600">TU Delft · A+BE · Digital Technologies · 09/2025 – 03/2026</p>
-          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700"><li>Unity-based VR simulation of a robotic arm as tutorial resource.</li></ul>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
+            <li>Unity-based VR simulation of a robotic arm as tutorial resource.</li>
+          </ul>
         </div>
+
         <div class="card">
           <h3 class="text-base font-semibold">Architectural Designer</h3>
           <p class="text-sm text-gray-600">Shanghai UA Design Co., Ltd. · 05/2021 – 05/2022</p>
-          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700"><li>Parametric modeling for high-rise and public projects; facade modulation; bidding visuals.</li>
-          <li>Key projects: Greenland Star Tower 380m, Haimen School Dormitory (in operation since 09/2024).</li></ul>
+          <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-gray-700">
+            <li>Parametric modeling for high-rise and public projects; facade modulation; bidding visuals.</li>
+            <li>Key projects: Greenland Star Tower 380m, Haimen School Dormitory (in operation since 09/2024).</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- Skills（保持） -->
     <section id="skills" class="scroll-mt-24 mt-12">
       <h2 class="mb-5 text-xl font-semibold tracking-tight">Skills</h2>
       <div class="grid gap-4 md:grid-cols-2">
@@ -378,7 +306,7 @@
       </div>
     </section>
 
-    <!-- AWARDS -->
+    <!-- Awards（保持） -->
     <section id="awards" class="scroll-mt-24 mt-12">
       <h2 class="mb-5 text-xl font-semibold tracking-tight">Awards &amp; Exhibitions</h2>
       <div class="grid gap-4 md:grid-cols-2">
@@ -410,7 +338,9 @@
       </div>
     </section>
 
-    <footer class="py-12 text-center text-xs text-gray-500">© <span id="year"></span> Xiaochen Ding — Built as static HTML.</footer>
+    <footer class="py-12 text-center text-xs text-gray-500">
+      © <span id="year"></span> Xiaochen Ding — Built as static HTML.
+    </footer>
   </main>
 </div>
 

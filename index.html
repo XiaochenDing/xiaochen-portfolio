@@ -11,6 +11,19 @@ html{scroll-behavior:smooth}.chip{border:1px solid #e5e7eb;border-radius:9999px;
 @media (min-width:768px){.two-col{display:flex;gap:24px}.two-col .left{width:16rem;flex-shrink:0}}
 @media print{a[href]:after{content:" (" attr(href) ")";font-size:10px;color:#6b7280}.no-print{display:none!important}}
 [data-lang=en] .i18n-zh{display:none}[data-lang=zh] .i18n-en{display:none}
+
+#education .grid { display: block !important; }              /* 取消 grid 布局，竖排 */
+#education .card {
+  border: none;                                              /* 去掉卡片边框 */
+  padding: 0;                                                /* 去掉内边距 */
+  border-radius: 0;                                          /* 去掉圆角 */
+  margin: 0; 
+}
+#education .card + .card {
+  margin-top: 16px;                                          /* 项之间间距 */
+  padding-top: 16px;                                         /* 分隔线与内容距离 */
+  border-top: 1px solid #e5e7eb;                             /* 分隔线 */
+}  
 </style></head>
 <body data-lang="en" class="bg-white text-gray-900">
 <div class="md:flex min-h-screen">
